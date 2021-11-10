@@ -1,14 +1,16 @@
 import React from "react";
 import { AppProps } from "next/app";
 import "bootstrap/dist/css/bootstrap.min.css";
+import 'react-toastify/dist/ReactToastify.css';
 import "@styles/global.css";
 import { Provider } from "react-redux";
 import store from "@redux/store";
 
+
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   return (
     <Provider store={store}>
-      <Component {...pageProps} />
+        <Component {...pageProps} />
     </Provider>
   );
 }
