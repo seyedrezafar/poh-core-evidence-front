@@ -37,7 +37,7 @@ export const Main: React.FC = () => {
       alert("Please install MetaMask to use this dApp!");
     }
 
-    setWeb3Enabled(true);
+    
 
     var accs = await web3.eth.getAccounts();
 
@@ -57,6 +57,8 @@ export const Main: React.FC = () => {
         //   }
         // }))
         console.log(address);
+        if(address !== null && address !== undefined)
+          setWeb3Enabled(true);
         return {
           address,
           balance: web3.utils.fromWei(balance, "ether"),
